@@ -1,0 +1,17 @@
+<div class="sidenav-container" [class]="!expanded ? 'small' : ''">
+    <div class="project-name">
+        Spring Projects
+    </div>
+    <ul class="menu-list">
+        @if(menus$ | async; as menus){
+            @for(menu of menus; track menu.id){
+                <li class="menu-item">
+                    <a [routerLink]="menu.route" class="menu-link" routerLinkActive="active">
+                        <span class="icon-container" [innerHTML]="domSanitizer.bypassSecurityTrustHtml(menu.icon)"></span>
+                        <span class="label-text">{{menu.name}}</span>
+                    </a>
+                </li>
+            }
+        }
+    </ul>
+</div>

@@ -1,0 +1,29 @@
+.primary-nav{
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+    position: fixed;
+    --width: 28rem;
+    top: 0;
+    left: var(--width);
+    width: calc(100% - calc(var(--width) + calc(2 * 1.5rem)));
+    transition: all 200ms ease-in-out;
+    &.small{
+        --width: 8rem;
+    }
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+}
+
+.sidenav-btn,
+.nav-link{
+    cursor: pointer;  
+}

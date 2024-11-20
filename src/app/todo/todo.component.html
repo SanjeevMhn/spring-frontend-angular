@@ -1,0 +1,21 @@
+<header class="main-header">
+  <h2 class="title">Todo App</h2>
+  <button class="btn-reset add-todo">Add Todo</button>
+</header>
+<ul class="todo-list">
+  @if (todos$ | async; as todos) { @for(todo of todos; track todo.id){
+  <li class="todo-item">
+    <h4 class="todo-title">{{ todo.taskTitle }}</h4>
+    <p class="todo-body">{{ todo.taskBody }}</p>
+    <label for="switch{{ todo.taskId }}" class="switch-container">
+      <input
+        type="checkbox"
+        name=""
+        id="switch{{ todo.taskId }}"
+        class="switch"
+        [checked]="todo.isCompleted"
+      />
+    </label>
+  </li>
+  } }
+</ul>

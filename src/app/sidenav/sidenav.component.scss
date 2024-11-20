@@ -1,0 +1,116 @@
+.sidenav-container {
+  width: 28rem;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background-color: var(--sidenav-color);
+  transition: all 200ms ease-in-out;
+  z-index: 999;
+  &.small {
+    width: 8rem;
+    &:hover {
+      width: 28rem;
+      box-shadow: 0 2px 8px 8px rgba(0, 0, 0, 0.2);
+    }
+    &:not(&:hover) {
+      .project-name {
+        height: 0.5rem;
+        width: 0.5rem;
+        margin: 1rem auto;
+        border-radius: 50%;
+        font-size: 0;
+        background-color: #fff;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: none;
+        &:before {
+          content: "SP";
+          font-size: 1.6rem;
+          font-weight: 500;
+          color: #000;
+          position: absolute;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          top: calc(100% + 0.75rem);
+          width: 300%;
+          height: 0.1rem;
+          background-color: #ffffff73;
+        }
+      }
+      .menu-list{
+        .menu-item{
+          .menu-link{
+            justify-content: center;
+            .label-text{
+              display: none;
+              animation: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.project-name {
+  font-size: 2.25rem;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  padding: 1.5rem;
+  font-weight: 400;
+  box-shadow: 0 1px 0 0 #ffffff73;
+  animation: text 400ms ease-in-out 0s 1 forwards;
+}
+
+@keyframes text {
+  0% {
+    width: 60%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  50% {
+    width: 80%;
+  }
+  100% {
+    width: 100%;
+    white-space: none;
+  }
+}
+
+.menu-list {
+  padding: 1rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  .menu-item {
+    .menu-link {
+      padding: 1rem;
+      border-radius: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      &.active {
+        background-color: var(--sidenav-menu-active);
+      }
+      .icon-container {
+        --size: 2.5rem;
+        --color: #fff;
+      }
+      .label-text {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.8rem;
+        animation: text 400ms ease-in-out 0s 1 forwards;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<div class="main-container">
+  <app-navbar (toggleSidebar)="toggleSidebar()" [expanded]="sidebarExpanded" />
+  <app-sidenav [expanded]="sidebarExpanded"  />
+  <div class="content" [class]="!sidebarExpanded ? 'full' : ''">
+    <router-outlet />
+  </div>
+</div>
